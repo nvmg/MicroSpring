@@ -1,0 +1,1 @@
+web: java -cp target/classes edu.escuelaing.arem.microspringboot.MicroSpring edu.escuelaing.arem.microspringboot.WebService
