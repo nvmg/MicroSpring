@@ -65,19 +65,19 @@ public class MicroSpring {
 
             String path = null;
             
+            boolean primera = true;
             while ((inputLine = in.readLine()) != null) {
-                if(inputLine.contains("/")){ 
+                if(primera){ 
                     path = inputLine.split(" ")[1];
-                    break;
-                }
+                    primera = false;
                 if (!in.ready()) {
                     break;
                 }
             }
             
-            String content = "Not Foud";
+            String content = "Errom ";
             if(rutas.containsKey(path)){
-                content = (String) rutas.get(path.invoke(null));
+                content = (String) rutas.get(path).invoke(null);
             }
             
             outputLine = "HTTP/1.1 200 Ok\r\n"
