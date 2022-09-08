@@ -63,11 +63,11 @@ public class MicroSpring {
                             clientSocket.getInputStream()));
             String inputLine, outputLine;
 
-            URI path = null;
+            String path = null;
             
             while ((inputLine = in.readLine()) != null) {
                 if(inputLine.contains("/")){ 
-                    path = new URI(inputLine.split(" ")[1]);
+                    path = inputLine.split(" ")[1];
                     break;
                 }
                 if (!in.ready()) {
@@ -77,7 +77,7 @@ public class MicroSpring {
             
             String content = "Not Foud";
             if(rutas.containsKey(path)){
-                content = (String) rutas.get(path.getPath()).invoke(null);
+                content = (String) rutas.get(path.invoke(null));
             }
             
             outputLine = "HTTP/1.1 200 Ok\r\n"
