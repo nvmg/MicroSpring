@@ -1,1 +1,1 @@
-web: java -cp target/classes edu.escuelaing.arem.microspringboot.MicroSpring edu.escuelaing.arem.microspringboot.WebService
+web: java -cp target/classes:./target/dependency/* edu.escuelaing.arem.microspringboot.MicroSpring edu.escuelaing.arem.microspringboot.WebService
